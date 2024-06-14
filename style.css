@@ -146,6 +146,7 @@ a, a:hover, a:visited {
   font-weight: bold;
   margin-bottom: 300px;
   margin-left: 200px;
+  position: relative;
 }
 #mainvisual .main-text .main-text-btn {
   display: inline-block;
@@ -306,7 +307,8 @@ li {
   align-items: center;
   margin-bottom: 20px;
   opacity: 0;
-  transition: opacity 0.8s, transform 0.8s;
+  transform: scale(0.2);
+  transition: opacity 0.5s, transform 0.5s;
 }
 #voice .left-remark .text {
   margin-left: 20px;
@@ -314,9 +316,21 @@ li {
   background-color: #e9f1fb;
   border-radius: 15px;
   width: 500px;
+  position: relative;
+}
+#voice .left-remark .text::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 75px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid #e9f1fb;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
 }
 #voice .left-remark.is-inview {
   opacity: 1;
+  transform: scale(1);
   transition-delay: 0.5s;
 }
 #voice .right-remark {
@@ -325,7 +339,8 @@ li {
   flex-direction: row-reverse;
   margin-bottom: 20px;
   opacity: 0;
-  transition: opacity 0.8s, transform 0.8s;
+  transform: scale(0.2);
+  transition: opacity 0.5s, transform 0.5s;
 }
 #voice .right-remark .text {
   margin-right: 20px;
@@ -333,8 +348,43 @@ li {
   background-color: #e9f1fb;
   border-radius: 15px;
   width: 500px;
+  position: relative;
+}
+#voice .right-remark .text::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 75px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #e9f1fb;
 }
 #voice .right-remark.is-inview {
   opacity: 1;
+  transform: scale(1);
   transition-delay: 0.5s;
+}
+
+.bg {
+  background: url(img/bg.gif) repeat;
+  animation: bg-slider 10s infinite linear;
+  padding: 100px 0;
+  margin-bottom: 120px;
+}
+.bg .summaries li {
+  width: 48%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 60px;
+  margin-bottom: 32px;
+}
+
+@keyframes bg-slider {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -700px -700px;
+  }
 }/*# sourceMappingURL=style.css.map */

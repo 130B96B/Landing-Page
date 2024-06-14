@@ -145,6 +145,7 @@ a,a:hover,a:visited{
       font-weight: bold;
       margin-bottom: 300px;
       margin-left: 200px;
+      position: relative;
       & .main-text-btn{
         display: inline-block;
         cursor: pointer;
@@ -169,7 +170,6 @@ a,a:hover,a:visited{
         }
       }
     }
-
   }
   @keyframes image-switch-animation {
     0%, 20% {
@@ -299,17 +299,30 @@ a,a:hover,a:visited{
       align-items: center;
       margin-bottom: 20px;
       opacity: 0;
-      transition: opacity .8s, transform .8s; 
+      transform: scale(0.2);
+      transition: opacity .5s, transform .5s; 
       & .text{
         margin-left: 20px;
         padding: 20px;
         background-color: #e9f1fb;
         border-radius: 15px;
         width: 500px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          left: -30px;
+          top: 75px;
+          border-top: 15px solid transparent;
+          border-right: 15px solid #e9f1fb;
+          border-bottom: 15px solid transparent;
+          border-left: 15px solid transparent;
+        }
       }
     }
     .left-remark.is-inview{
       opacity: 1;
+      transform: scale(1);
       transition-delay: .5s;
     }
     & .right-remark{
@@ -318,19 +331,51 @@ a,a:hover,a:visited{
       flex-direction: row-reverse;
       margin-bottom: 20px;
       opacity: 0;
-      transition: opacity .8s, transform .8s;
+      transform: scale(0.2);
+      transition: opacity .5s, transform .5s;
       & .text{
         margin-right: 20px;
         padding: 20px;
         background-color: #e9f1fb;
         border-radius: 15px;
         width: 500px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          right: -30px;
+          top: 75px;
+          border-top: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-left: 15px solid #e9f1fb;
+        }
       }
     }
     .right-remark.is-inview{
       opacity: 1;
+      transform: scale(1);
       transition-delay: .5s;
     }
   }
+  .bg{
+    background: url(img/bg.gif) repeat;
+    animation: bg-slider 10s infinite linear;
+    padding: 100px 0;
+    margin-bottom: 120px;
+    .summaries{
+      li{
+        width: 48%;
+        background-color: white;
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 32px;
+      }
+    }
 
+  }
+  @keyframes bg-slider {
+    from { background-position: 0 0; }
+      to { background-position: -700px -700px; }
+  }
 
