@@ -18,3 +18,6 @@ $(function () {
         $(this).addClass("is-inview");
     });
 });
+$(".hamburger, .nav-list").click(function(){ 
+    $(".hamburger, .nav").toggleClass("active");
+    });
