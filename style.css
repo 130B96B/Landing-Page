@@ -44,6 +44,7 @@ a:visited {
   margin-top: 35px;
 }
 .hamburger span:nth-of-type(2) {
+  transition: opacity 0.6s;
   margin-top: 13px;
 }
 .hamburger span:nth-of-type(3) {
@@ -62,7 +63,7 @@ a:visited {
   transform: rotate(45deg);
 }
 .hamburger.active span:nth-of-type(2) {
-  visibility: hidden;
+  opacity: 0;
 }
 .hamburger.active span:nth-of-type(3) {
   position: absolute;
@@ -83,11 +84,11 @@ a:visited {
   text-align: center;
   font-weight: bold;
   line-height: 50px;
-  visibility: hidden;
-  transition: visibility 0.2s;
+  opacity: 0;
+  transition: opacity 0.6s;
 }
 .nav.active {
-  visibility: visible;
+  opacity: 1;
 }
 .nav img {
   position: absolute;
