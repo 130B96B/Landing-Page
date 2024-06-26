@@ -85,9 +85,11 @@ a:visited {
   font-weight: bold;
   line-height: 50px;
   opacity: 0;
-  transition: opacity 0.6s;
+  visibility: hidden;
+  transition: opacity 0.6s, visibility 0.6s;
 }
 .nav.active {
+  visibility: visible;
   opacity: 1;
 }
 .nav img {
