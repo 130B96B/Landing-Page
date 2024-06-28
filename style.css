@@ -280,6 +280,7 @@ li {
 
 .rightside {
   opacity: 0;
+  visibility: hidden;
   transform: translateX(150%);
   transition: opacity 0.8s, transform 0.8s;
   margin-top: 20px;
@@ -308,6 +309,7 @@ li {
 .rightside.is-inview {
   opacity: 1;
   transform: translateX(100%);
+  visibility: visible;
   transition-delay: 0.5s;
 }
 
@@ -596,8 +598,8 @@ li {
   }
   #voice .left-remark .text::after {
     left: 48%;
-    top: 90px;
-    border-top: 15px solid #e9f1fb;
+    bottom: 0;
+    border-top: 15px solid #ff2a2a;
     border-right: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 15px solid transparent;
@@ -675,7 +677,7 @@ li {
     flex-wrap: wrap;
   }
   .footer dl {
-    width: 25%;
+    width: 20%;
   }
   .footer dl dt {
     font-size: medium;
